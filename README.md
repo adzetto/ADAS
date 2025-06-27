@@ -18,6 +18,7 @@ Each component has its own set of instructions and dependencies. Please refer to
 
 *   [ADAS-screen/README.md](ADAS-screen/README.md)
 *   [TRAFFICSIGN/CORE/README.md](TRAFFICSIGN/CORE/README.md)
+*   [LORA/README.md](LORA/README.md)
 *   [Ultra-Fast-Lane-Detection/README.md](Ultra-Fast-Lane-Detection/README.md)
 
 ## Usage
