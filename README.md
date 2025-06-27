@@ -16,10 +16,10 @@ This repository contains a collection of projects related to Advanced Driver-Ass
 
 Each component has its own set of instructions and dependencies. Please refer to the `README.md` file within each subdirectory for more information on how to set up and use each component.
 
-*   [ADAS-screen/README.md](ADAS-screen/README.md)
-*   [TRAFFICSIGN/CORE/README.md](TRAFFICSIGN/CORE/README.md)
-*   [LORA/README.md](LORA/README.md)
-*   [Ultra-Fast-Lane-Detection/README.md](Ultra-Fast-Lane-Detection/README.md)
+*   [ADAS-screen/README.md](/ADAS-screen/README.md)
+*   [LORA/README.md](/LORA/README.md)
+*   [TRAFFICSIGN/CORE/README.md](/TRAFFICSIGN/CORE/README.md)
+*   [Ultra-Fast-Lane-Detection/README.md](/Ultra-Fast-Lane-Detection/README.md)
 
 ## Usage
 
