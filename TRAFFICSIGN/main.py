@@ -22,6 +22,8 @@ Examples:
   python main.py demo                    # Run interactive demo
   python main.py detect image.jpg       # Detect single image
   python main.py batch images/          # Batch process directory
+  python main.py pi-camera              # Run Pi camera detection
+  python main.py pi-camera -c 0.4 -i 0.5 # High-frequency Pi detection
   python main.py usage                  # Show usage guide
         """
     )
@@ -51,6 +53,19 @@ Examples:
     
     # Usage command
     usage_parser = subparsers.add_parser('usage', help='Show usage guide')
+    
+    # Pi Camera command
+    pi_parser = subparsers.add_parser('pi-camera', help='Run Raspberry Pi camera detection')
+    pi_parser.add_argument('-c', '--confidence', type=float, default=0.3,
+                          help='Confidence threshold (default: 0.3)')
+    pi_parser.add_argument('-r', '--resolution', default='1920x1080',
+                          help='Camera resolution WxH (default: 1920x1080)')
+    pi_parser.add_argument('-i', '--interval', type=float, default=1.0,
+                          help='Detection interval in seconds (default: 1.0)')
+    pi_parser.add_argument('-d', '--duration', type=float,
+                          help='Detection duration in seconds (optional)')
+    pi_parser.add_argument('--no-save', action='store_true',
+                          help='Do not save results to file')
     
     args = parser.parse_args()
     
@@ -94,6 +109,24 @@ Examples:
     elif args.command == 'usage':
         import usage
         return usage.main()
+    
+    elif args.command == 'pi-camera':
+        import pi_camera_detector
+        
+        # Prepare arguments for pi_camera_detector
+        sys.argv = ['pi_camera_detector.py']
+        if args.confidence != 0.3:
+            sys.argv.extend(['--confidence', str(args.confidence)])
+        if args.resolution != '1920x1080':
+            sys.argv.extend(['--resolution', args.resolution])
+        if args.interval != 1.0:
+            sys.argv.extend(['--interval', str(args.interval)])
+        if args.duration:
+            sys.argv.extend(['--duration', str(args.duration)])
+        if args.no_save:
+            sys.argv.append('--no-save')
+        
+        return pi_camera_detector.main()
     
     else:
         print(f"Unknown command: {args.command}")

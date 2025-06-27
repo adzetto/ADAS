@@ -1,0 +1,21 @@
+name: adas-trafficsign-pi
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pip=23.3.1
+  - numpy=1.24.3
+  - pillow=10.0.1
+  - matplotlib=3.7.2
+  - opencv=4.8.1
+  - scipy=1.11.4
+  - pip:
+    - tensorflow==2.13.0
+    - picamera2==0.3.12
+    - libcamera==0.0.5
+    - gpiozero==1.6.2
+    - RPi.GPIO==0.7.1
+    - psutil==5.9.6
+    - tqdm==4.66.1
+    - colorama==0.4.6
